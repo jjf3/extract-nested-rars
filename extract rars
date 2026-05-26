@@ -1,0 +1,4 @@
+find "/volume2/path/to/crap/" \
+  -name "*.rar" \
+  ! -path "*/Subs/*" \
+  -exec bash -c 'unrar e -o- "$1" "$(dirname "$1")/"' _ {} \;
